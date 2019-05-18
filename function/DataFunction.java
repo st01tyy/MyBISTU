@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +18,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+
+import com.alibaba.fastjson.JSONObject;
 
 import core.Data;
 import javafx.scene.Scene;
@@ -41,7 +44,17 @@ public class DataFunction
 		}
 		InterfaceFunction.startApp(stage);
 	}
-	public static String doPost(String url, Map<String, String> param) 
+	public static void login(String id, String pw)
+	{
+		Map<String, String> param = new HashMap<String, String>();
+		param.put("xh", id);
+		param.put("password", pw);
+		String str = doPost("https://www.bistu520.cn:8080", param);
+		System.out.println(str);
+		//Data data = JSONObject.parseObject(str, Data.class);
+		
+	}
+	private static String doPost(String url, Map<String, String> param) 
 	{  
         CloseableHttpClient httpClient = HttpClients.createDefault();  
         CloseableHttpResponse response = null;  
@@ -67,7 +80,7 @@ public class DataFunction
             }  
             response = httpClient.execute(httpPost);
             resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
-            System.out.println(resultString);
+            //System.out.println(resultString);
         } 
         catch (Exception e) 
         {  
