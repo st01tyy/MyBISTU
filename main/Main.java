@@ -16,7 +16,7 @@ public class Main extends Application
 	@Override
 	public void start(Stage arg0) throws Exception 
 	{
-		//System.out.println("ÄãÂèËÀÁË£¿£¿");
+		Current.mainStage = arg0;
 		DataFunction.startApp(arg0);
 	}
 

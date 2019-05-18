@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.LoginPane">
+   <children>
+      <HBox alignment="CENTER" layoutY="41.0" prefHeight="100.0" prefWidth="600.0">
+         <children>
+            <Label text="学号">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtfield_id" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="250.0">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="141.0" prefHeight="100.0" prefWidth="600.0">
+         <children>
+            <Label text="密码">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="txtfield_pw" focusTraversable="false" prefWidth="250.0">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </PasswordField>
+         </children>
+      </HBox>
+      <JFXButton fx:id="btn_login" focusTraversable="false" layoutX="270.0" layoutY="281.0" style="-fx-background-color: #00EC00;" text="登录">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="label_fail" layoutX="255.0" layoutY="339.0" text="登陆失败！" textFill="#d32525" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

@@ -5,13 +5,13 @@ import java.io.Serializable;
 public class Data implements Serializable
 {
 	private static final long serialVersionUID = 1L;
-	private String [][] grade;
+	private String[][] grade;
 	private String GPA;
 	private String[] user_token;
-	private Course[][][] timetable;
+	private String[][][] timetable;
 	private String name;
 	private String major;
-	private String [][] Exam;
+	private String[][] Exam;
 	
 
 	public String[][] getGrade() {
@@ -40,11 +40,11 @@ public class Data implements Serializable
 
 	
 
-	public Course[][][] getTimetable() {
+	public String[][][] getTimetable() {
 		return timetable;
 	}
 
-	public void setTimetable(Course[][][] timetable) {
+	public void setTimetable(String[][][] timetable) {
 		this.timetable = timetable;
 	}
 

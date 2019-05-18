@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="vbox" alignment="CENTER" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: ;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.SimpleGradePane">
+   <children>
+      <Label fx:id="label_up" text="Label">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_down" text="Label">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>

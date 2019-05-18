@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MainPane">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="700.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../picture/person.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="15.0" top="5.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label fx:id="label_id" text="2017011402">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btn_switchAc" focusTraversable="false" prefHeight="40.0" prefWidth="40.0">
+               <HBox.margin>
+                  <Insets left="350.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="360.0" prefWidth="700.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <VBox alignment="CENTER" prefHeight="360.0" prefWidth="150.0">
+               <children>
+                  <JFXButton fx:id="btn_grade" focusTraversable="false" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: yellow;" />
+                  <Label text="成绩">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="360.0" prefWidth="150.0">
+               <children>
+                  <JFXButton fx:id="btn_schedule" focusTraversable="false" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: yellow;" />
+                  <Label text="课程表">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="360.0" prefWidth="150.0">
+               <children>
+                  <JFXButton fx:id="btn_exam" focusTraversable="false" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: yellow;" />
+                  <Label text="考试查询">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

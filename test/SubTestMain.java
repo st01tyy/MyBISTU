@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import ui.MainPane;
+import ui.SimpleGradePane;
 
 public class SubTestMain extends Application{
 
@@ -19,10 +20,10 @@ public class SubTestMain extends Application{
 	@Override
 	public void start(Stage arg0) throws Exception {
 
-		FXMLLoader loader = new FXMLLoader(TestMain.class.getResource("/fxml/main.fxml"));
+		FXMLLoader loader = new FXMLLoader(TestMain.class.getResource("/fxml/single_grade.fxml"));
 		VBox vbox = loader.load();
-		MainPane controller = loader.getController();
-		controller.initialize();
+		SimpleGradePane controller = loader.getController();
+		controller.initialize("2", "3");
 		arg0.setScene(new Scene(vbox, vbox.getPrefWidth(), vbox.getPrefHeight()));
 		arg0.show();
 		

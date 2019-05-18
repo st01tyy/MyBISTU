@@ -1,6 +1,9 @@
 package function;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,6 +34,24 @@ public class InterfaceFunction
 		} 
 		catch (IOException e)
 		{
+			e.printStackTrace();
+		}
+	}
+	public static void refresh(Stage stage)
+	{
+		setMainPane();
+		stage.setScene(new Scene(Current.mainPane, Current.mainPane.getPrefWidth(), Current.mainPane.getPrefHeight()));
+		ObjectOutputStream out = null;
+		try {
+			out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("./data.ruben")));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			out.writeObject(Current.data);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

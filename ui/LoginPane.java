@@ -5,13 +5,19 @@ import com.jfoenix.controls.JFXSpinner;
 
 import core.Logger;
 import function.DataFunction;
+import function.InterfaceFunction;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import main.Current;
 
 public class LoginPane 
 {
+	private Stage stage;
+	
     @FXML
     private TextField txtfield_id;
 
@@ -22,34 +28,39 @@ public class LoginPane
     private JFXButton btn_login;
     
     @FXML
-    private JFXSpinner spinner;
-
-    @FXML
-    void d32525(ActionEvent event) {
-
-    }
+    private Label label_fail;
 
     
-    public void initialize()
+    public void initialize(Stage stage)
     {
+    	this.stage = stage;
     	this.btn_login.setOnMouseClicked(e -> onLoginClicked());
     }
-    
     private void onLoginClicked()
     {
-    	this.spinner.setVisible(true);
     	String id = txtfield_id.getText();
     	String pw = txtfield_pw.getText();
     	Logger logger = new Logger(id, pw);
-    	Thread th = new Thread(logger);
-    	
-    	th.start();
-    	try {
-			th.join();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	this.spinner.setVisible(false);
+    	logger.run();
+    	if(logger.isResult())
+    	{
+    		Current.data = logger.getData();
+    		Current.isLoggedin = true;
+    		InterfaceFunction.refresh(Current.mainStage);
+    		String[][][] arr = Current.data.getTimetable();
+    		for(int a=0;a<arr.length;a++)
+    		{
+    			for(int b=0;b<arr[a].length;b++)
+    			{
+    				for(int c=0;c<arr[a][b].length;c++)
+    				{
+    					System.out.println(arr[a][b][c]);
+    				}
+    			}
+    		}
+    		stage.close();
+    	}
+    	else
+    		this.label_fail.setVisible(true);
     }
 }
