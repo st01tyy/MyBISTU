@@ -23,6 +23,8 @@ public class LoginPane
     
     private void onLoginClicked()
     {
+    	String id = txtfield_id.getText();
+    	String pw = txtfield_pw.getText();
     	
     }
 }

@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import main.Current;
 
 public class MainPane 
 {
@@ -29,10 +30,27 @@ public class MainPane
     
     public void initialize()
     {
+    	if(!Current.isLoggedin)
+    	{
+    		this.btn_exam.disarm();
+    		this.btn_grade.disarm();
+    		this.btn_schedule.disarm();
+    		this.label_id.setText("Î´µÇÂ¼");
+    	}
+    	else
+    	{
+    		this.label_id.setText(Current.data.getUser_token()[0]);
+    	}
     	this.btn_switchAc.setStyle("-fx-background-image: url('/picture/setting.png')");
     	this.btn_grade.setStyle("-fx-background-image: url('/picture/score.png')");
+    	if(!Current.isLoggedin)
+    		
     	this.btn_schedule.setStyle("-fx-background-image: url('/picture/timetable.png')");
+    	if(!Current.isLoggedin)
+    		
     	this.btn_exam.setStyle("-fx-background-image: url('/picture/test.png')");
+    	if(!Current.isLoggedin)
+    		
     	this.btn_switchAc.setOnMouseClicked(e -> this.onSwitchClicked());
     }
     
