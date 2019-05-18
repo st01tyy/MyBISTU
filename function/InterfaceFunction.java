@@ -39,8 +39,6 @@ public class InterfaceFunction
 	}
 	public static void refresh(Stage stage)
 	{
-		setMainPane();
-		stage.setScene(new Scene(Current.mainPane, Current.mainPane.getPrefWidth(), Current.mainPane.getPrefHeight()));
 		ObjectOutputStream out = null;
 		try {
 			out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("./data.ruben")));
@@ -49,10 +47,13 @@ public class InterfaceFunction
 			e.printStackTrace();
 		}
 		try {
+			out.flush();
 			out.writeObject(Current.data);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		setMainPane();
+		stage.setScene(new Scene(Current.mainPane, Current.mainPane.getPrefWidth(), Current.mainPane.getPrefHeight()));
 	}
 }

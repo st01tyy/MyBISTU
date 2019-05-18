@@ -1,12 +1,9 @@
 package ui;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXSpinner;
 
 import core.Logger;
-import function.DataFunction;
 import function.InterfaceFunction;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;

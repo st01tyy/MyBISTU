@@ -18,6 +18,7 @@ public class SimpleGradePane
     {
     	this.label_up.setText(strUp);
     	this.label_down.setText(strDown);
-    	this.vbox.setStyle("-fx-background-image: url('/picture/grade.jpg')");
+    	this.vbox.setStyle("-fx-background-image: url('/picture/1.jpg')");
+    	this.vbox.setPrefSize(400, 100);
     }
 }

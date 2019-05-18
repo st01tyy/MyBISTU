@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import main.Current;
@@ -29,18 +30,23 @@ public class MainPane
     @FXML
     private Label label_id;
     
+    @FXML
+    private HBox nmsl;
+    
     public void initialize()
     {
     	if(!Current.isLoggedin)
     	{
-    		this.btn_exam.disarm();
-    		this.btn_grade.disarm();
-    		this.btn_schedule.disarm();
+    		this.btn_grade.setDisable(true);
+    		this.btn_exam.setDisable(true);
+    		this.btn_schedule.setDisable(true);
     		this.label_id.setText("Î´µÇÂ¼");
     	}
     	else
     	{
     		this.label_id.setText(Current.data.getUser_token()[0]);
+    		this.btn_exam.setDisable(true);
+    		this.btn_schedule.setDisable(true);
     	}
     	this.btn_switchAc.setStyle("-fx-background-image: url('/picture/setting.png')");
     	this.btn_grade.setStyle("-fx-background-image: url('/picture/score.png')");
@@ -68,14 +74,14 @@ public class MainPane
     	stage.setTitle("³É¼¨");
     	stage.show();
     }
-    private void onScheduleClicked()
-    {
-    	
-    }
-    private void onExamClicked()
-    {
-    	
-    }
+//    private void onScheduleClicked()
+//    {
+//    	
+//    }
+//    private void onExamClicked()
+//    {
+//    	
+//    }
     private void onSwitchClicked()
     {
     	Stage stage = new Stage();

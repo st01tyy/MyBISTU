@@ -43,7 +43,7 @@ public class GradePane
 			controller.initialize(up, down);
 			gridpane.add(mainPane, 0, a);
 		}
-		gridpane.setPrefSize(400, list.length*100);
-		this.scrollpane.setPrefSize(430, 600);
+		gridpane.setPrefSize(400, list.length*110);
+		this.scrollpane.setPrefSize(400, 600);
 	}
 }
