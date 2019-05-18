@@ -1,5 +1,7 @@
 package test;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -51,9 +53,9 @@ public class TestMain
                 httpPost.setEntity(entity);  
             }  
             // ÷¥––http«Î«Û  
-            response = httpClient.execute(httpPost); 
-            System.out.println("recived");
-            resultString = EntityUtils.toString(response.getEntity());  
+            response = httpClient.execute(httpPost);
+            resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
+            System.out.println(resultString);
         } catch (Exception e) {  
             e.printStackTrace();  
         } finally {  
@@ -67,13 +69,15 @@ public class TestMain
         System.out.println(resultString);
         return resultString;  
     }  
-	public static void main(String[] args) 
+	public static void main(String[] args) throws FileNotFoundException 
 	{
 		String url = "https://www.bistu520.cn:8080";
 		Map<String, String> param = new HashMap<String, String>();
 		param.put("xh", "2017011398");
 		param.put("password", "mcy200091");
 		String str = doPost(url, param);
-		System.out.println(str+" "+str.length());
+		PrintWriter w = new PrintWriter(new File("./test.txt"));
+		w.write(str);
+		w.close();
 	}
 }
